@@ -70,3 +70,5 @@ Our Prediction Problem: We decided to use classification to do a binary classife
 ## Final Model
 
 ## Fairness Analysis
+<img width="1054" alt="image" src="https://github.com/user-attachments/assets/6b5d5b19-05d0-4d4a-99df-b3703f05d91b">
+
