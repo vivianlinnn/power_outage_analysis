@@ -20,7 +20,8 @@ For CAUSE.CATEGORY.DETAIL on YEAR column, fail to reject the null, CAUSE.CATEGOR
 
 **Alternative Hypothesis:** The missingness of `CUSTOMERS.AFFECTED` is dependent of the column `CLIMATE.CATEGORY`.
 
-We chose to use the TVD for our permutation test.
+**Test Statistic:** TVD
+
 <img width="1079" alt="image" src="https://github.com/user-attachments/assets/d5ac2a86-0bed-4a4b-a338-9fd82d142f70">
 Our p-value of 0.753 is greater than our significance level of 0.05, meaning we fail to reject the null hypothesis. We conclude that the missingness of `CUSTOMERS.AFFECTED` is not significantly associated with the column` CLIMATE.CATEGORY `and is independent on `CLIMATE.CATEGORY`. 
 
