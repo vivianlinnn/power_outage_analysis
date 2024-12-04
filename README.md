@@ -16,6 +16,9 @@ For CAUSE.CATEGORY.DETAIL on YEAR column, fail to reject the null, CAUSE.CATEGOR
 
 
 ## Hypothesis Testing
+**Null Hypothesis:** The missingness of `CUSTOMERS.AFFECTED` is independent of the column `CLIMATE.CATEGORY`. 
+
+**Alternative Hypothesis:** The missingness of `CUSTOMERS.AFFECTED` is dependent of the column `CLIMATE.CATEGORY`.
 
 ## Framing a Prediction Problem
 
