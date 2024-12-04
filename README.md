@@ -24,6 +24,20 @@ These are the columns we used:
 - `ANOMALY.LEVEL` - This represents the oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season. It is estimated as a 3-month running mean of ERSST.v4 SST anomalies in the Niño 3.4 region (5°N to 5°S, 120–170°W)
 - `TOTAL.REALGSP` - Real GSP contributed by all industries (total) (measured in 2009 chained U.S. dollars)
 
+| **Column Name**       | **Description**                                                                                                                                                                |
+|-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
+| `YEAR`                | Year when the outage event occurred.                                                                                                                                             |
+| `MONTH`               | Month when the outage event occurred.                                                                                                                                            |
+| `NERC.REGION`         | The North American Electric Reliability Corporation (NERC) regions impacted by the outage event.                                                                               |
+| `CLIMATE.REGION`      | U.S. Climate regions as specified by the National Centers for Environmental Information.                                                                                         |
+| `CLIMATE.CATEGORY`    | Represents the climate episodes corresponding to the years. The categories are “Warm”, “Cold”, or “Normal”.                                                                    |
+| `CAUSE.CATEGORY`      | Categories of events causing the major power outages (e.g., weather-related, equipment failure, human error, etc.).                                                             |
+| `OUTAGE.DURATION`     | Duration of the outage event (measured in hours, days, etc.).                                                                                                                  |
+| `CUSTOMERS.AFFECTED`  | Number of customers affected by the power outage event.                                                                                                                        |
+| `RES.PERCEN`          | Percentage of residential electricity consumption compared to the total electricity consumption in the state (in %).                                                          |
+| `ANOMALY.LEVEL`       | Represents the oceanic El Niño/La Niña (ONI) index referring to cold and warm episodes by season. It is estimated as a 3-month running mean of ERSST.v4 SST anomalies in the Niño 3.4 region (5°N to 5°S, 120–170°W). |
+| `TOTAL.REALGSP`       | Real Gross State Product (GSP) contributed by all industries (total), measured in 2009 chained U.S. dollars.                                                                  |
+
 
 ## Data Cleaning and Exploratory Data Analysis
 
