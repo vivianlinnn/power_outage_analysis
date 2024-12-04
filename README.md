@@ -20,9 +20,9 @@ For CAUSE.CATEGORY.DETAIL on YEAR column, fail to reject the null, CAUSE.CATEGOR
 
 **Alternative Hypothesis:** The missingness of `CUSTOMERS.AFFECTED` is dependent of the column `CLIMATE.CATEGORY`.
 
-We chose to use the TVD to predict the column 'CLIMATE.CATEGORY'
+We chose to use the TVD for our permutation test.
 <img width="1079" alt="image" src="https://github.com/user-attachments/assets/d5ac2a86-0bed-4a4b-a338-9fd82d142f70">
-We achieved a p-value of 0.778, which is greater than the observed statistic 0.05, thus, we rejected the null hypothesis
+Our p-value of 0.753 is greater than our significance level of 0.05, meaning we fail to reject the null hypothesis. We conclude that the missingness of `CUSTOMERS.AFFECTED` is not significantly associated with the column` CLIMATE.CATEGORY `and is independent on `CLIMATE.CATEGORY`. 
 
 ## Framing a Prediction Problem
 Our Prediction Problem: We decided to use classification to do a binary classifer to predict the column 'CLIMATE.REGION' because we think it answers our central question: "Where does outages occur"
