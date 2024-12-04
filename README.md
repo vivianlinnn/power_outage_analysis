@@ -11,19 +11,6 @@ The dataset comprises of 1534 rows.
 
 These are the columns we used:
 
-- `YEAR` - year when the outage event occurred
-- `MONTH`- the month when the outage event occurred
-- `NERC.REGION` - The North American Electric Reliability Corporation (NERC) regions impacted by outage event
-- `CLIMATE.REGION` - U.S. Climate regions as specified by National Centers for Environmental Information
-- `CLIMATE.CATEGORY` - This represents the climate episodes corresponding to the years. The categories—“Warm”, “Cold” or “Normal” 
-- `CAUSE.CATEGORY` - Categories of all the events causing the major power outages
-- `OUTAGE.DURATION` - how long the outage lasted
-- `CUSTOMERS.AFFECTED` - Number of customers affected by the power outage
-- `NERC.REGION` - The North American Electric Reliability Corporation (NERC) regions involved in the outage event
-- `RES.PERCEN`- Percentage of residential electricity consumption compared to the total electricity consumption in the state (in %)
-- `ANOMALY.LEVEL` - This represents the oceanic El Niño/La Niña (ONI) index referring to the cold and warm episodes by season. It is estimated as a 3-month running mean of ERSST.v4 SST anomalies in the Niño 3.4 region (5°N to 5°S, 120–170°W)
-- `TOTAL.REALGSP` - Real GSP contributed by all industries (total) (measured in 2009 chained U.S. dollars)
-
 | **Column Name**       | **Description**                                                                                                                                                                |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
 | `YEAR`                | Year when the outage event occurred.                                                                                                                                             |
