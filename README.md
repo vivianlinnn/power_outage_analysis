@@ -1,7 +1,6 @@
-# Title: Outage Analysis Project
-
-**Name(s)**: Vivian Lin, Selina Zhang
-
+# Outage Analysis Project
+Fall '24 DSC 80 Project 
+**By:** Vivian Lin, Selina Zhang
 
 
 ## Introduction
