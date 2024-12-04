@@ -25,6 +25,7 @@ We chose to use the TVD to predict the column 'CLIMATE.CATEGORY'
 We achieved a p-value of 0.778, which is greater than the observed statistic 0.05, thus, we rejected the null hypothesis
 
 ## Framing a Prediction Problem
+Our Prediction Problem: We decided to use classification to do a binary classifer to predict the column 'CLIMATE.REGION' because we think it answers our central question: "Where does outages occur"
 
 ## Baseline Model
 
