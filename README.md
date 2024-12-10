@@ -65,7 +65,28 @@ When performing bivariate analyses, we observe for the relationship of two varia
 To achieve this plot, we calculated the grouped z-score by `CLIMATE.REGION` of all `OUTAGE.DURATION` and made the z-score threshold to be within approximately -0.5 to 0.5 to remove any significant outliers to give us a better representation to give us a more general comparison between all regions. 
 <img width="1079" alt="image" src="climate_region_OD.jpg">
 
-According to this plot, we observe the relationship between the different climate regions and different quartile measurements (1st quartile, Median, 3rd Quartile) of the outage durations of each regions with the East North Central Region having the highest median outage duration. 
+In this plot, we observe the relationship between the different climate regions and different quartile measurements (1st quartile, Median, 3rd Quartile) of the outage durations of each regions. The East North Central Region have the highest Q1, median, and Q3 outage duration. 
+
+#### Cause Category vs. Customers Affected
+<img width="1079" alt="image" src="cause_category_CA.jpg">
+
+In this plot, we observe the relationship between the `CAUSE.CATEGORY` and `CUSTOMERS.AFFECTED`. The two major causes for more severe outages, meaning that on average, customers affected was the greatest because of these two causes are severe weather and system operation disruptions.
+
+
+### Interesting Aggregates
+
+| **CLIMATE.REGION**           | **(0, 1M]** | **(1M, 2M]** | **(2M, 3M]** | **(3M, )** |
+|--------------------------|---------|----------|----------|--------|
+| **Central**                  | 156     | 1        | 0        | 0      |
+| **East North Central**      | 117     | 0        | 1        | 0      |
+| **Northeast**              | 265     | 0        | 0        | 1      |
+| **Northwest**                | 62      | 0        | 0        | 0      |
+| **South**                    | 149     | 4        | 2        | 0      |
+| **Southeast**                | 140     | 1        | 1        | 1      |
+| **Southwest**                | 45      | 0        | 0        | 0      |
+| **West**                     | 125     | 6        | 1        | 0      |
+| **West North Central**       | 7       | 0        | 0        | 0      |
+
 
 
 ## Assessment of Missingness
