@@ -46,7 +46,7 @@ We cleaned the data set by just extracting the relevent columns of `YEAR`, `MONT
 When performing univariate analyses, we observe for the distribution of single variables.
 
 #### Distribution of Outages in Different Climate Regions
-
+<img width="1079" src='climate_region_counts.jpg'
 
 ## Assessment of Missingness
 NMAR Column: OUTAGE.RESTORATION.TIME, because the likelihood of the restoration time itself, longer outages are less likely to be reported, outages might have not ended it or they might not have the advanced infrastructure to report the data so there are more bias towards areas with the kind of infrastruction to report the data of the end data of the restoration time.
