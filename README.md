@@ -30,7 +30,7 @@ Although there is a total of 57 columns, we are only going to use the ones below
 
 ## Data Cleaning and Exploratory Data Analysis
 
-We cleaned the data set by just getting the relevent columns of `YEAR`, `MONTH`, `NERC.REGION`, `CLIMATE.REGION`, `CLIMATE.CATEGORY`, `CAUSE.CATEGORY`, `OUTAGE.DURATION` , `CUSTOMERS.AFFECTED`, `RES.PERCEN`, `ANOMALY.LEVEL`, and `DEMAND.LOSS.MW`.
+We cleaned the data set by just extracting the relevent columns of `YEAR`, `MONTH`, `NERC.REGION`, `CLIMATE.REGION`, `CLIMATE.CATEGORY`, `CAUSE.CATEGORY`, `OUTAGE.DURATION` , `CUSTOMERS.AFFECTED`, `RES.PERCEN`, `ANOMALY.LEVEL`, and `DEMAND.LOSS.MW`.
 
 ### First 5 Rows of Dataset
 
@@ -43,6 +43,10 @@ We cleaned the data set by just getting the relevent columns of `YEAR`, `MONTH`,
 | 2015     | 7         | MRO             | East North Central | warm                 | severe weather      | 1740                | 250000                | 33.982576       | 1.2               | 292023            | 250                 |
 
 ### Univariate Analyses
+When performing univariate analyses, we observe for the distribution of single variables.
+
+#### Distribution of Outages in Different Climate Regions
+
 
 ## Assessment of Missingness
 NMAR Column: OUTAGE.RESTORATION.TIME, because the likelihood of the restoration time itself, longer outages are less likely to be reported, outages might have not ended it or they might not have the advanced infrastructure to report the data so there are more bias towards areas with the kind of infrastruction to report the data of the end data of the restoration time.
