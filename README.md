@@ -32,6 +32,8 @@ Although there is a total of 57 columns, we are only going to use the ones below
 
 We cleaned the data set by just extracting the relevent columns of `YEAR`, `MONTH`, `NERC.REGION`, `CLIMATE.REGION`, `CLIMATE.CATEGORY`, `CAUSE.CATEGORY`, `OUTAGE.DURATION` , `CUSTOMERS.AFFECTED`, `RES.PERCEN`, `ANOMALY.LEVEL`, and `DEMAND.LOSS.MW`.
 
+Although we did not initially make any new columns in this step, we made copies of this original dataframe and added necessary columns for those particular steps. 
+
 ### First 5 Rows of Dataset
 
 | **YEAR** | **MONTH** | **NERC.REGION** | **CLIMATE.REGION** | **CLIMATE.CATEGORY** | **CAUSE.CATEGORY**  | **OUTAGE.DURATION** | **CUSTOMERS.AFFECTED** | **RES.PERCEN** | **ANOMALY.LEVEL** | **TOTAL.REALGSP** | **DEMAND.LOSS.MW** |
@@ -47,6 +49,10 @@ When performing univariate analyses, we observe for the distribution of single v
 
 #### Distribution of Outages in Different Climate Regions
 <img width="1079" alt="image" src="climate_region_counts.jpg">
+
+#### Distribution of Outages Across Different Months of the Year
+<img width="1079" alt="image" src="month_counts.jpg">
+
 
 ## Assessment of Missingness
 NMAR Column: OUTAGE.RESTORATION.TIME, because the likelihood of the restoration time itself, longer outages are less likely to be reported, outages might have not ended it or they might not have the advanced infrastructure to report the data so there are more bias towards areas with the kind of infrastruction to report the data of the end data of the restoration time.
