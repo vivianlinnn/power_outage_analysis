@@ -159,6 +159,11 @@ The pipeline combined a ColumnTransformer for preprocessing and the Random Fores
 
 Overall, the model performs well as a baseline, with strong metrics and effective handling of both categorical and numerical features. While missing values in 'RES.PERCEN' could be addressed to enhance performance, the current implementation provides a solid foundation for predicting climate regions
 ## Final Model
+In our final model, we added two key features: months_from_2000 and seasons. The months_from_2000 feature calculates how many months have passed since January 2000, allowing the model to capture long-term trends in the data. The seasons feature groups months into categories like Winter and Spring, helping the model account for natural seasonal variations in climate. These additions make sense because climate patterns are closely tied to both time and seasonality, so they gave our model a better understanding of the data.
+
+We chose to use a Random Forest Classifier because it works well with mixed data types and can handle complex relationships between features. After testing different hyperparameter configurations through grid search, we found that limiting the tree depth to 12 and using 40 estimators produced the best results. This setup balanced accuracy and efficiency while avoiding overfitting.
+
+Overall, our final model performed significantly better than the baseline. While the baseline achieved an F1 score of 0.7576, the new model improved on this by incorporating more meaningful features and fine-tuning its parameters. These changes allowed the model to better capture patterns in the data, leading to more accurate and reliable predictions.
 
 ## Fairness Analysis
 For the Fairness Analysis Model, we computed the difference in the distribution of the f1_score between the 'is_winter,' counting months [12, 1, 2] as 'is_winter' against the 'not_winter' group, in which we created a new is_winter column as a tranformation from the 'MONTH' column. We chose this analysis and thinks it supports our main argument 'where are the causes of major outages?' because while we we're making a new column for each 'Season' we realized that the outages in the month winter are disporportion to the other seasons. Therefore, we wanted to investigate if our model is fair based of the data.
