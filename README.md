@@ -122,6 +122,8 @@ We will access whether the missingness is dependent on `CLIMATE.CATEGORY` and `C
 
 **Test Statistic:** TVD
 
+<img width="1079" alt="image" src="missing_CC.png">
+
 <img width="1079" alt="image" src="https://github.com/user-attachments/assets/d5ac2a86-0bed-4a4b-a338-9fd82d142f70">
 The observed TVD is 321.5, resulting in the p-value of 0.753, which is greater than our significance level of 0.05. We fail to reject the null hypothesis and conclude that the missingness of `CUSTOMERS.AFFECTED` is not dependent on the column` CLIMATE.CATEGORY `and is independent from `CLIMATE.CATEGORY`. 
 
@@ -131,6 +133,8 @@ The observed TVD is 321.5, resulting in the p-value of 0.753, which is greater t
 **Alternative Hypothesis:** The missingness of `CUSTOMERS.AFFECTED` is dependent of the column `CLIMATE.REGION`.
 
 **Test Statistic:** TVD
+
+<img width="1079" alt="image" src="missing_CR.png">
 
 <img width="1079" alt="image" src="climate_region_customers_affected.jpg">
 The observed TVD is 334.0, resulting in the p-value of 0.0, which is less than our significance level of 0.05. We reject the null hypothesis and conclude that the missingness of `CUSTOMERS.AFFECTED` is dependent on the column `CLIMATE.CATEGORY` 
