@@ -142,6 +142,8 @@ The observed TVD is 334.0, resulting in the p-value of 0.0, which is less than o
 
 ## Hypothesis Testing
 
+We will be performing a permutation test to determine if the number of customers affected by power outages in the `South` region is greater than the number of customers affected by power outages in the `Northeast` region. We will be using the columns of `CUSTOMERS.AFFECTED` and `CLIMATE.REGION`. Within the `CLIMATE.REGION` columns, we will be focusing on the values of `South` and `Northeast` as those are what we will be observing in the permutation test.
+
 **Null Hypothesis:** On average, the number of customers affected by power outages in `South` region is the same as the number of customers affected by power outage in `Northeast` region.
 
 **Alternate Hypothesis:** On average, the number of customers affected by power outages in `South` region is greater than the number of customers affected by power outage in `Northeast` region.
