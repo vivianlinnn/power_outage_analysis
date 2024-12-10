@@ -90,6 +90,15 @@ In our data frame, we created a new column which is `customers_affected_ranges`,
 | **West North Central**       | 7       | 0        | 0        | 0      |
 
 
+In addition, we also grouped `NERC.REGIONS` and get the calculated mean of different severity metrics of the outages including `OUTAGE.DURATION`, `CUSTOMERS.AFFECTED`, and `DEMAND.LOSS.MW` through the aggregate function of mean. The first five rows of the pivot table are shown below: 
+| **NERC.REGION** | **OUTAGE.DURATION** | **CUSTOMERS.AFFECTED** | **DEMAND.LOSS.MW** |
+|-----------------|---------------------|------------------------|--------------------|
+| ASCC            | NaN                 | 14273.0                | 35.0               |
+| ECAR            | 5603.3125           | 256354.1875            | 1314.483871        |
+| FRCC            | 4271.116279         | 289778.181818          | 804.45             |
+| FRCC, SERC      | 372.0               | NaN                    | NaN                |
+| HECO            | 895.333333          | 126728.666667          | 466.666667         |
+
 
 ## Assessment of Missingness
 NMAR Column: OUTAGE.RESTORATION.TIME, because the likelihood of the restoration time itself, longer outages are less likely to be reported, outages might have not ended it or they might not have the advanced infrastructure to report the data so there are more bias towards areas with the kind of infrastruction to report the data of the end data of the restoration time.
