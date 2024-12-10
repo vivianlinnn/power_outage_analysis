@@ -154,7 +154,9 @@ We resulted in a p-value of 0.021. At a 0.05 significance level, we reject the n
 
 
 ## Framing a Prediction Problem
-Our Prediction Problem: We decided to use classification to do a binary classifer to predict the column 'CLIMATE.REGION' because we think it answers our central question: 'where are the causes of major outages?'
+Our prediction problem is a binary classification task to predict 'CLIMATE.REGION', identifying whether a major outage occurred in the South or Northeast. This helps address regional differences in outage causes.
+
+We use only features available at the time of prediction, such as climate categories, anomaly levels, and time-related features. The F1-score was chosen as our evaluation metric for its balance between precision and recall, ensuring accurate predictions even with potential class imbalances.
 
 ## Baseline Model
 We used a Random Forest Classifier built to predict the 'CLIMATE.REGION' (binary: Northeast or South). We used features such as 'ANOMALY.LEVEL', 'YEAR', 'RES.PERCEN' (quantitative), and 'CLIMATE.CATEGORY' (nominal). The 'CLIMATE.CATEGORY' feature was one-hot encoded, while quantitative features were passed directly into the model without scaling, as Random Forest handles mixed data types effectively. The target, 'CLIMATE.REGION', was binarized (0 for Northeast, 1 for South).
