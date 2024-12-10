@@ -148,6 +148,7 @@ The observed TVD is 334.0, resulting in the p-value of 0.0, which is less than o
 
 Test statistic: difference in mean, (mean number of customers affect in `South` region) - (mean number of customers afected in `Northeast` region)
 
+We resulted in a p-value of 0.021. At a 0.05 significance level, we reject the null hypothesis.
 ## Framing a Prediction Problem
 Our Prediction Problem: We decided to use classification to do a binary classifer to predict the column 'CLIMATE.REGION' because we think it answers our central question: 'where are the causes of major outages?'
 
