@@ -75,6 +75,8 @@ In this plot, we observe the relationship between the `CAUSE.CATEGORY` and `CUST
 
 ### Interesting Aggregates
 
+In our data frame, we created a new column which is `customers_affected_ranges`, which is categorize `CUSTOMERS.AFFECTED` into different ranges which are `(0, 1M], (1M, 2M], (2M, 3M], (3M, )`. These ranges are based on the actual numbers from `CUSTOMERS.AFFECTED`. In this pivot table, we grouped by the different climate regions and performed an aggregate function of count() to determine how many outages occurred within each customer range for each region. 
+
 | **CLIMATE.REGION**           | **(0, 1M]** | **(1M, 2M]** | **(2M, 3M]** | **(3M, )** |
 |--------------------------|---------|----------|----------|--------|
 | **Central**                  | 156     | 1        | 0        | 0      |
