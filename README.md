@@ -103,12 +103,18 @@ In addition, we also grouped `NERC.REGIONS` and get the calculated mean of diffe
 
 
 ## Assessment of Missingness
+
+### NMAR Analysis
 NMAR Column: OUTAGE.RESTORATION.TIME, because the likelihood of the restoration time itself, longer outages are less likely to be reported, outages might have not ended it or they might not have the advanced infrastructure to report the data so there are more bias towards areas with the kind of infrastruction to report the data of the end data of the restoration time.
 
 MAR Column: Reject the null, the misssingness of CAUSE.CATEGORY.DETAIL is dependent on CLIMATE.REGION
 For CAUSE.CATEGORY.DETAIL on YEAR column, fail to reject the null, CAUSE.CATEGORY.DETAIL not dependent on year
 
 ### Missingness Dependency
+
+We will access whether the missingness is dependent on `CLIMATE.CATEGORY` and `CLIMATE.REGION`
+
+#### Climate Category
 
 **Null Hypothesis:** The missingness of `CUSTOMERS.AFFECTED` is independent of the column `CLIMATE.CATEGORY`. 
 
@@ -117,7 +123,18 @@ For CAUSE.CATEGORY.DETAIL on YEAR column, fail to reject the null, CAUSE.CATEGOR
 **Test Statistic:** TVD
 
 <img width="1079" alt="image" src="https://github.com/user-attachments/assets/d5ac2a86-0bed-4a4b-a338-9fd82d142f70">
-Our p-value of 0.753 is greater than our significance level of 0.05, meaning we fail to reject the null hypothesis. We conclude that the missingness of `CUSTOMERS.AFFECTED` is not significantly associated with the column` CLIMATE.CATEGORY `and is independent on `CLIMATE.CATEGORY`. 
+The observed TVD is 321.5, resulting in the p-value of 0.753, which is greater than our significance level of 0.05. We fail to reject the null hypothesis and conclude that the missingness of `CUSTOMERS.AFFECTED` is not dependent on the column` CLIMATE.CATEGORY `and is independent from `CLIMATE.CATEGORY`. 
+
+#### Climate Region
+**Null Hypothesis:** The missingness of `CUSTOMERS.AFFECTED` is independent of the column `CLIMATE.REGION`. 
+
+**Alternative Hypothesis:** The missingness of `CUSTOMERS.AFFECTED` is dependent of the column `CLIMATE.REGION`.
+
+**Test Statistic:** TVD
+
+<img width="1079" alt="image" src="climate_region_customers_affected.jpg">
+The observed TVD is 334.0, resulting in the p-value of 0.0, which is less than our significance level of 0.05. We reject the null hypothesis and conclude that the missingness of `CUSTOMERS.AFFECTED` is dependent on the column `CLIMATE.CATEGORY` 
+
 
 ## Hypothesis Testing
 
