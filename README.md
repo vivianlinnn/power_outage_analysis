@@ -48,7 +48,7 @@ Although we did not initially make any new columns in this step, we made copies 
 When performing univariate analyses, we observe for the distribution of single variables.
 
 #### Distribution of Outages in Different Climate Regions
-<img width="1079" alt="image" src="climate_region_counts.jpg">
+<img width="1079" alt="image" src="https://cdn.plot.ly/plotly-2.35.2.min.js">
 As observed, the greatest number of outages reported in the years 2000 to 2016 are the Northeast and South regions.
 
 
