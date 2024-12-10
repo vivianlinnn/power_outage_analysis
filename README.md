@@ -147,7 +147,11 @@ The observed TVD is 334.0, resulting in the p-value of 0.0, which is less than o
 Our Prediction Problem: We decided to use classification to do a binary classifer to predict the column 'CLIMATE.REGION' because we think it answers our central question: 'where are the causes of major outages?'
 
 ## Baseline Model
+We used a Random Forest Classifier built to predict the 'CLIMATE.REGION' (binary: Northeast or South). We used features such as 'ANOMALY.LEVEL', 'YEAR', 'RES.PERCEN' (quantitative), and 'CLIMATE.CATEGORY' (nominal). The 'CLIMATE.CATEGORY' feature was one-hot encoded, while quantitative features were passed directly into the model without scaling, as Random Forest handles mixed data types effectively. The target, 'CLIMATE.REGION', was binarized (0 for Northeast, 1 for South).
 
+The pipeline combined a ColumnTransformer for preprocessing and the Random Forest Classifier for predictions. The model was evaluated using R² and F1 scores over 100 iterations. The average R² score was 0.8173, indicating that the model explains a significant portion of the variability in the data. The F1 score averaged 0.7576, demonstrating a good balance of precision and recall for the binary classification task.
+
+Overall, the model performs well as a baseline, with strong metrics and effective handling of both categorical and numerical features. While missing values in 'RES.PERCEN' could be addressed to enhance performance, the current implementation provides a solid foundation for predicting climate regions
 ## Final Model
 
 ## Fairness Analysis
