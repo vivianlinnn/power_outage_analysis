@@ -169,11 +169,17 @@ The pipeline combined a ColumnTransformer for preprocessing and the Random Fores
 Overall, the model performs well as a baseline, with strong metrics and effective handling of both categorical and numerical features. While missing values in `'RES.PERCEN'` could be addressed to enhance performance, the current implementation provides a solid foundation for predicting climate regions.
 
 ## Final Model
-In our final model, we added two key features: months_from_2000 and seasons. The months_from_2000 feature calculates how many months have passed since January 2000, allowing the model to capture long-term trends in the data. The seasons feature groups months into categories like Winter and Spring, helping the model account for natural seasonal variations in climate. These additions make sense because climate patterns are closely tied to both time and seasonality, so they gave our model a better understanding of the data.
 
-We chose to use a Random Forest Classifier because it works well with mixed data types and can handle complex relationships between features. After testing different hyperparameter configurations through grid search, we found that limiting the tree depth to 12 and using 40 estimators produced the best results. This setup balanced accuracy and efficiency while avoiding overfitting.
+In our final model, we used the following features `'CLIMATE.CATEGORY'`, `'ANOMALY.LEVEL'`, `'YEAR'`, `'RES.PERCEN'`, `'MONTH'`, `'TOTAL.REALGSP'`, `'CLIMATE.REGION'` from the data set as well as created two other features of `months_from_2000` and seasons. We used `YEAR` and `MONTH` to calculate the number of months that passed since January 2000, hence `months_from_2000` and used `MONTH` to categorize the rows based on `season`: winter, spring, summer, autumn. These two new features were created via a FunctionTransformer. We then used a ColumnTransformer to OneHotEncode the nominal columns of `seasons` and `CLIMATE.CATEOGORY`. With the OneHotEncoding, we handled unknown values that may be absent in the training set but exist in the test set by ignoring them and dropping the first OHE feature to avoid multicollinearity. The remaining features are passthrough and remain unchanged. 
 
-Overall, our final model performed significantly better than the baseline. While the baseline achieved an F1 score of 0.7576, the new model improved on this by incorporating more meaningful features and fine-tuning its parameters. These changes allowed the model to better capture patterns in the data, leading to more accurate and reliable predictions.
+These were all passed into a pipeline with the RandomTreeClassifier being our main classifier model. We chose to use a Random Forest Classifier because it works well with mixed data types and can handle complex relationships between features as well as taking the average of multiple DecisionTrees.
+
+To find the optimal hyperparameters for our RandomTreeClassifier, we used GridSearchCV under the assumption of random_state=42 to have more consistent results, giving us the results of 
+- max_depth = 12
+- n_estimators = 40
+
+Overall, we noticed an improvement in our final model with an average $R^2$ across 100 simulations (same as above) of 0.952 and an F-1 Score of 0.939. 
+
 
 ## Fairness Analysis
 For the Fairness Analysis Model, we computed the difference in the distribution of the f1_score between the 'is_winter,' counting months [12, 1, 2] as 'is_winter' against the 'not_winter' group, in which we created a new is_winter column as a tranformation from the 'MONTH' column. We chose this analysis and thinks it supports our main argument 'where are the causes of major outages?' because while we we're making a new column for each 'Season' we realized that the outages in the month winter are disporportion to the other seasons. Therefore, we wanted to investigate if our model is fair based of the data.
