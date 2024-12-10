@@ -178,7 +178,7 @@ To find the optimal hyperparameters for our RandomTreeClassifier, we used GridSe
 - max_depth = 12
 - n_estimators = 40
 
-Overall, we noticed an improvement in our final model with an average $R^2$ across 100 simulations (same as above) of 0.952 and an F-1 Score of 0.939. 
+Overall, we noticed an improvement in our final model with an average $R^2$ across 100 simulations (similar to before) of 0.952 and an F-1 Score of 0.939. 
 
 
 ## Fairness Analysis
