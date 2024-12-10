@@ -166,7 +166,7 @@ Our model was built to predict the 'CLIMATE.REGION' (binary: Northeast or South)
 
 The pipeline combined a ColumnTransformer for preprocessing and the Random Forest Classifier for predictions. Because of the amount of variation in the evaluation metrics, we ran the model 100 times with different splits training and testing sets and calculated the averages. Over the course of 100 simulations, the $R^2$ is 0.802, while the F-1 Score is 0.744. 
 
-Overall, the model performs well as a baseline, with strong metrics and effective handling of both categorical and numerical features. While missing values in `'RES.PERCEN'` could be addressed to enhance performance, the current implementation provides a solid foundation for predicting climate regions.
+Overall, the model performed well as a baseline, with strong metrics and effective handling of both categorical and numerical features. While missing values in `'RES.PERCEN'` could be addressed to enhance performance, the current implementation provides a solid foundation for predicting climate regions.
 
 ## Final Model
 
