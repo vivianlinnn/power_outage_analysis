@@ -1,4 +1,4 @@
-# <span style="color: green;"> Power Outage Analysis <\span>
+# <span style="color: green;"> Power Outage Analysis </span>
 Fall '24 DSC 80 Project 
 
 **By:** Vivian Lin, Selina Zhang
