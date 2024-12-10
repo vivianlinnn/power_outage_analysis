@@ -9,7 +9,7 @@ This project revolves around a dataset that provides rich information about powe
 
 The dataset comprises of 1534 rows.
 
-These are the columns we used:
+Although there is a total of 57 columns, we are only going to use the ones below:
 
 | **Column Name**       | **Description**                                                                                                                                                                |
 |-----------------------|--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------|
@@ -29,6 +29,8 @@ These are the columns we used:
 
 
 ## Data Cleaning and Exploratory Data Analysis
+
+We cleaned the data set by just getting the relevent columns of `YEAR`, `MONTH`, `NERC.REGION`, `CLIMATE.REGION`, `CLIMATE.CATEGORY`, `CAUSE.CATEGORY`, `OUTAGE.DURATION` , `CUSTOMERS.AFFECTED`, `RES.PERCEN`, `ANOMALY.LEVEL`, and `DEMAND.LOSS.MW`.
 
 ### First 5 Rows of Dataset
 
