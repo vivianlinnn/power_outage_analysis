@@ -142,6 +142,11 @@ The observed TVD is 334.0, resulting in the p-value of 0.0, which is less than o
 
 ## Hypothesis Testing
 
+**Null Hypothesis:** On average, the number of customers affected by power outages in `South` region is the same as the number of customers affected by power outage in `Northeast` region.
+
+**Alternate Hypothesis:** On average, the number of customers affected by power outages in `South` region is greater than the number of customers affected by power outage in `Northeast` region.
+
+Test statistic: difference in mean, (mean number of customers affect in `South` region) - (mean number of customers afected in `Northeast` region)
 
 ## Framing a Prediction Problem
 Our Prediction Problem: We decided to use classification to do a binary classifer to predict the column 'CLIMATE.REGION' because we think it answers our central question: 'where are the causes of major outages?'
