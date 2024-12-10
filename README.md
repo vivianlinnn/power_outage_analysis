@@ -150,9 +150,7 @@ We will be performing a permutation test to determine if the number of customers
 
 Test statistic: difference in mean, (mean number of customers affect in `South` region) - (mean number of customers afected in `Northeast` region)
 
-We resulted in a p-value of 0.021. At a 0.05 significance level, we reject the null hypothesis.
-
-
+We performed 10,000 simulations to create our empirical distribution under the null hypothesis with our chosen test statistic. Our observed statistic of 61540 landed us at the p-value of 0.0204. With the significance level of 0.05, we reject the null hypothesis in favor for the alternative, indicating that the numbers of customers affected in `South` region is greater than the number of customers affected in the `Northeast` region. This means that outages in the `South` tend to be more severe. 
 
 
 ## Framing a Prediction Problem
