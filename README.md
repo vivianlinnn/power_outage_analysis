@@ -75,7 +75,7 @@ In this plot, we observe the relationship between the `CAUSE.CATEGORY` and `CUST
 
 ### Interesting Aggregates
 
-In our data frame, we created a new column which is `customers_affected_ranges`, which is categorize `CUSTOMERS.AFFECTED` into different ranges which are `(0, 1M], (1M, 2M], (2M, 3M], (3M, )`. These ranges are based on the actual numbers from `CUSTOMERS.AFFECTED`. In this pivot table, we grouped by the different climate regions and performed an aggregate function of count() to determine how many outages occurred within each customer range for each region. 
+In our data frame, we created a new column which is `customers_affected_ranges`, which is categorize `CUSTOMERS.AFFECTED` into different ranges which are `(0, 1M], (1M, 2M], (2M, 3M], (3M, )`. These ranges are based on the actual numbers from `CUSTOMERS.AFFECTED`. In this pivot table, we grouped by the different climate regions and performed an aggregate function of count() to determine how many outages occurred within each customer range for each region. The purpose of this aggregation is to identify the customer range in which each climate region is most likely to fall. By analyzing this historical data, we can gain insights into the patterns of customer impact, especially in extreme cases where outages affect a larger number of customers. This helps in understanding which ranges tend to have more frequent outages and provides a better understanding of the distribution of affected customers across different regions. 
 
 | **CLIMATE.REGION**           | **(0, 1M]** | **(1M, 2M]** | **(2M, 3M]** | **(3M, )** |
 |--------------------------|---------|----------|----------|--------|
@@ -90,7 +90,8 @@ In our data frame, we created a new column which is `customers_affected_ranges`,
 | **West North Central**       | 7       | 0        | 0        | 0      |
 
 
-In addition, we also grouped `NERC.REGIONS` and get the calculated mean of different severity metrics of the outages including `OUTAGE.DURATION`, `CUSTOMERS.AFFECTED`, and `DEMAND.LOSS.MW` through the aggregate function of mean. The first five rows of the pivot table are shown below: 
+In addition, we also grouped `NERC.REGIONS` and get the calculated mean of different severity metrics of the outages including `OUTAGE.DURATION`, `CUSTOMERS.AFFECTED`, and `DEMAND.LOSS.MW` through the aggregate function of mean. The significance of this aggregation is to compare the severity of outages on average across all `NERC.REGIONS`, so that we have a better understanding of which the areas where outages can have more significant impacts from outages. The first five rows of the pivot table are shown below: 
+
 | **NERC.REGION** | **OUTAGE.DURATION** | **CUSTOMERS.AFFECTED** | **DEMAND.LOSS.MW** |
 |-----------------|---------------------|------------------------|--------------------|
 | ASCC            | NaN                 | 14273.0                | 35.0               |
