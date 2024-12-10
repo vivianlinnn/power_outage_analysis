@@ -157,9 +157,9 @@ We performed 10,000 simulations to create our empirical distribution under the n
 
 
 ## Framing a Prediction Problem
-Our prediction problem is a binary classification task to predict 'CLIMATE.REGION', identifying whether a major outage occurred in the South or Northeast. This helps address regional differences in outage causes.
+Our prediction problem is a binary classification task to predict 'CLIMATE.REGION', identifying whether a major outage occurred in the South or Northeast. This helps address regional differences in outage causes, so that we can allocate our resources to helping the regions who are impacted more severely by major power outages.
 
-We use only features available at the time of prediction, such as climate categories, anomaly levels, and time-related features. The F1-score was chosen as our evaluation metric for its balance between precision and recall, ensuring accurate predictions even with potential class imbalances.
+We use only features available at the time of prediction including `'CLIMATE.CATEGORY'`, `'ANOMALY.LEVEL'`, `'YEAR'`, `'RES.PERCEN'`, `'CLIMATE.REGION'`. The F1-score was chosen as our evaluation metric for its balance between precision and recall, ensuring accurate predictions even with potential class imbalances. 
 
 ## Baseline Model
 We used a Random Forest Classifier built to predict the 'CLIMATE.REGION' (binary: Northeast or South). We used features such as 'ANOMALY.LEVEL', 'YEAR', 'RES.PERCEN' (quantitative), and 'CLIMATE.CATEGORY' (nominal). The 'CLIMATE.CATEGORY' feature was one-hot encoded, while quantitative features were passed directly into the model without scaling, as Random Forest handles mixed data types effectively. The target, 'CLIMATE.REGION', was binarized (0 for Northeast, 1 for South).
