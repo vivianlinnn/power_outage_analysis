@@ -49,9 +49,23 @@ When performing univariate analyses, we observe for the distribution of single v
 
 #### Distribution of Outages in Different Climate Regions
 <img width="1079" alt="image" src="climate_region_counts.jpg">
+As observed, the greatest number of outages reported in the years 2000 to 2016 are the Northeast and South regions.
+
 
 #### Distribution of Outages Across Different Months of the Year
 <img width="1079" alt="image" src="month_counts.jpg">
+As observed, outages are reported in the largest numbers in the months of June, July, and August. These months are in the season of summer, therefore according to the graph, outages are more likely to happen in the summer.
+
+
+### Bivariate Analyses
+When performing bivariate analyses, we observe for the relationship of two variables.
+
+#### Climate Region vs. Outage Duration
+
+To achieve this plot, we calculated the grouped z-score by `CLIMATE.REGION` of all `OUTAGE.DURATION` and made the z-score threshold to be within approximately -0.5 to 0.5 to remove any significant outliers to give us a better representation to give us a more general comparison between all regions. 
+<img width="1079" alt="image" src="climate_region_OD.jpg">
+
+According to this plot, we observe the relationship between the different climate regions and different quartile measurements (1st quartile, Median, 3rd Quartile) of the outage durations of each regions with the East North Central Region having the highest median outage duration. 
 
 
 ## Assessment of Missingness
