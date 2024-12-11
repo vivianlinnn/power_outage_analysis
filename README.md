@@ -143,7 +143,12 @@ We will access whether the missingness is dependent on `CLIMATE.CATEGORY` and `C
 
 **Test Statistic:** TVD
 
-<img width="1079" alt="image" src="missing_CC.png">
+<iframe
+  src="assets/climate_category_dist.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 <iframe
   src="assets/missing_climate_category.html"
@@ -161,7 +166,12 @@ The observed TVD is 321.5, resulting in the p-value of 0.753, which is greater t
 
 **Test Statistic:** TVD
 
-<img width="1079" alt="image" src="missing_CR.png">
+<iframe
+  src="assets/climate_region_dist.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 <iframe
   src="assets/missing_climate_region.html"
