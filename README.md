@@ -36,13 +36,13 @@ Although we did not initially make any new columns in this step, we made copies 
 
 ### First 5 Rows of Dataset
 
-| **YEAR** | **MONTH** | **NERC.REGION** | **CLIMATE.REGION** | **CLIMATE.CATEGORY** | **CAUSE.CATEGORY**  | **OUTAGE.DURATION** | **CUSTOMERS.AFFECTED** | **RES.PERCEN** | **ANOMALY.LEVEL** | **TOTAL.REALGSP** | **DEMAND.LOSS.MW** |
-|----------|-----------|-----------------|--------------------|----------------------|---------------------|---------------------|-----------------------|----------------|-------------------|-------------------|---------------------|
-| 2011     | 7         | MRO             | East North Central | normal               | severe weather      | 3060                | 70000                 | 35.549073       | -0.3              | 274182            | NaN                 |
-| 2014     | 5         | MRO             | East North Central | normal               | intentional attack  | 1                   | NaN                   | 30.032487       | -0.1              | 291955            | NaN                 |
-| 2010     | 10        | MRO             | East North Central | cold                 | severe weather      | 3000                | 70000                 | 28.097672       | -1.5              | 267895            | NaN                 |
-| 2012     | 6         | MRO             | East North Central | normal               | severe weather      | 2550                | 68200                 | 31.994099       | -0.1              | 277627            | NaN                 |
-| 2015     | 7         | MRO             | East North Central | warm                 | severe weather      | 1740                | 250000                | 33.982576       | 1.2               | 292023            | 250                 |
+|    |   YEAR |   MONTH | NERC.REGION   | CLIMATE.REGION     | CLIMATE.CATEGORY   | CAUSE.CATEGORY     |   OUTAGE.DURATION |   CUSTOMERS.AFFECTED |   RES.PERCEN |   ANOMALY.LEVEL |   TOTAL.REALGSP |   DEMAND.LOSS.MW |
+|---:|-------:|--------:|:--------------|:-------------------|:-------------------|:-------------------|------------------:|---------------------:|-------------:|----------------:|----------------:|-----------------:|
+|  0 |   2011 |       7 | MRO           | East North Central | normal             | severe weather     |              3060 |                70000 |      35.5491 |            -0.3 |          274182 |              nan |
+|  1 |   2014 |       5 | MRO           | East North Central | normal             | intentional attack |                 1 |                  nan |      30.0325 |            -0.1 |          291955 |              nan |
+|  2 |   2010 |      10 | MRO           | East North Central | cold               | severe weather     |              3000 |                70000 |      28.0977 |            -1.5 |          267895 |              nan |
+|  3 |   2012 |       6 | MRO           | East North Central | normal             | severe weather     |              2550 |                68200 |      31.9941 |            -0.1 |          277627 |              nan |
+|  4 |   2015 |       7 | MRO           | East North Central | warm               | severe weather     |              1740 |               250000 |      33.9826 |             1.2 |          292023 |              250 |
 
 ### Univariate Analyses
 When performing univariate analyses, we observe for the distribution of single variables.
@@ -98,29 +98,38 @@ In this plot, we observe the relationship between the `CAUSE.CATEGORY` and `CUST
 
 In our data frame, we created a new column which is `customers_affected_ranges`, which is categorize `CUSTOMERS.AFFECTED` into different ranges which are `(0, 1M], (1M, 2M], (2M, 3M], (3M, )`. These ranges are based on the actual numbers from `CUSTOMERS.AFFECTED`. In this pivot table, we grouped by the different climate regions and performed an aggregate function of count() to determine how many outages occurred within each customer range for each region. The purpose of this aggregation is to identify the customer range in which each climate region is most likely to fall. By analyzing this historical data, we can gain insights into the patterns of customer impact, especially in extreme cases where outages affect a larger number of customers. This helps in understanding which ranges tend to have more frequent outages and provides a better understanding of the distribution of affected customers across different regions. 
 
-| **CLIMATE.REGION**           | **(0, 1M]** | **(1M, 2M]** | **(2M, 3M]** | **(3M, )** |
-|--------------------------|---------|----------|----------|--------|
-| **Central**                  | 156     | 1        | 0        | 0      |
-| **East North Central**      | 117     | 0        | 1        | 0      |
-| **Northeast**              | 265     | 0        | 0        | 1      |
-| **Northwest**                | 62      | 0        | 0        | 0      |
-| **South**                    | 149     | 4        | 2        | 0      |
-| **Southeast**                | 140     | 1        | 1        | 1      |
-| **Southwest**                | 45      | 0        | 0        | 0      |
-| **West**                     | 125     | 6        | 1        | 0      |
-| **West North Central**       | 7       | 0        | 0        | 0      |
+| CLIMATE.REGION     |   (0, 1M] |   (1M, 2M] |   (2M, 3M] |   (3M, ) |
+|:-------------------|----------:|-----------:|-----------:|---------:|
+| Central            |       156 |          1 |          0 |        0 |
+| East North Central |       117 |          0 |          1 |        0 |
+| Northeast          |       265 |          0 |          0 |        1 |
+| Northwest          |        62 |          0 |          0 |        0 |
+| South              |       149 |          4 |          2 |        0 |
+| Southeast          |       140 |          1 |          1 |        1 |
+| Southwest          |        45 |          0 |          0 |        0 |
+| West               |       125 |          6 |          1 |        0 |
+| West North Central |         7 |          0 |          0 |        0 |
 
 
-In addition, we also grouped `NERC.REGIONS` and get the calculated mean of different severity metrics of the outages including `OUTAGE.DURATION`, `CUSTOMERS.AFFECTED`, and `DEMAND.LOSS.MW` through the aggregate function of mean. The significance of this aggregation is to compare the severity of outages on average across all `NERC.REGIONS`, so that we have a better understanding of which the areas where outages can have more significant impacts from outages. The first five rows of the pivot table are shown below: 
+In addition, we also grouped `NERC.REGIONS` and get the calculated mean of different severity metrics of the outages including `OUTAGE.DURATION`, `CUSTOMERS.AFFECTED`, and `DEMAND.LOSS.MW` through the aggregate function of mean. The significance of this aggregation is to compare the severity of outages on average across all `NERC.REGIONS`, so that we have a better understanding of which the areas where outages can have more significant impacts from outages.
 
 
-| **NERC.REGION** | **OUTAGE.DURATION** | **CUSTOMERS.AFFECTED** | **DEMAND.LOSS.MW** |
-|-----------------|---------------------|------------------------|--------------------|
-| ASCC            | NaN                 | 14273.0                | 35.0               |
-| ECAR            | 5603.3125           | 256354.1875            | 1314.483871        |
-| FRCC            | 4271.116279         | 289778.181818          | 804.45             |
-| FRCC, SERC      | 372.0               | NaN                    | NaN                |
-| HECO            | 895.333333          | 126728.666667          | 466.666667         |
+| NERC.REGION   |   OUTAGE.DURATION |   CUSTOMERS.AFFECTED |   DEMAND.LOSS.MW |
+|:--------------|------------------:|---------------------:|-----------------:|
+| ASCC          |           nan     |                14273 |           35     |
+| ECAR          |          5603.31  |               256354 |         1314.48  |
+| FRCC          |          4271.12  |               289778 |          804.45  |
+| FRCC, SERC    |           372     |                  nan |          nan     |
+| HECO          |           895.333 |               126729 |          466.667 |
+| HI            |          1367     |               294000 |         1060     |
+| MRO           |          2933.59  |                88985 |          279.5   |
+| NPCC          |          3262.17  |               108726 |          930.123 |
+| PR            |           174     |                62000 |          220     |
+| RFC           |          3477.96  |               127894 |          293.153 |
+| SERC          |          1737.99  |               107854 |          556.325 |
+| SPP           |          2693.77  |               188513 |          159     |
+| TRE           |          2960.57  |               226469 |          635.62  |
+| WECC          |          1481.49  |               133833 |          498.242 |
 
 
 ## Assessment of Missingness
