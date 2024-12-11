@@ -36,13 +36,13 @@ Although we did not initially make any new columns in this step, we made copies 
 
 ### First 5 Rows of Dataset
 
-| **YEAR** | **MONTH** | **NERC.REGION** | **CLIMATE.REGION** | **CLIMATE.CATEGORY** | **CAUSE.CATEGORY**  | **OUTAGE.DURATION** | **CUSTOMERS.AFFECTED** | **RES.PERCEN** | **ANOMALY.LEVEL** | **TOTAL.REALGSP** | **DEMAND.LOSS.MW** |
-|----------|-----------|-----------------|--------------------|----------------------|---------------------|---------------------|-----------------------|----------------|-------------------|-------------------|---------------------|
-| 2011     | 7         | MRO             | East North Central | normal               | severe weather      | 3060                | 70000                 | 35.549073       | -0.3              | 274182            | NaN                 |
-| 2014     | 5         | MRO             | East North Central | normal               | intentional attack  | 1                   | NaN                   | 30.032487       | -0.1              | 291955            | NaN                 |
-| 2010     | 10        | MRO             | East North Central | cold                 | severe weather      | 3000                | 70000                 | 28.097672       | -1.5              | 267895            | NaN                 |
-| 2012     | 6         | MRO             | East North Central | normal               | severe weather      | 2550                | 68200                 | 31.994099       | -0.1              | 277627            | NaN                 |
-| 2015     | 7         | MRO             | East North Central | warm                 | severe weather      | 1740                | 250000                | 33.982576       | 1.2               | 292023            | 250                 |
+|   YEAR |   MONTH | NERC.REGION   | CLIMATE.REGION     | CLIMATE.CATEGORY   | CAUSE.CATEGORY     |   OUTAGE.DURATION |   CUSTOMERS.AFFECTED |   RES.PERCEN |   ANOMALY.LEVEL |   TOTAL.REALGSP |   DEMAND.LOSS.MW |
+|-------:|--------:|:--------------|:-------------------|:-------------------|:-------------------|------------------:|---------------------:|-------------:|----------------:|----------------:|-----------------:|
+|   2011 |       7 | MRO           | East North Central | normal             | severe weather     |              3060 |                70000 |      35.5491 |            -0.3 |          274182 |              nan |
+|   2014 |       5 | MRO           | East North Central | normal             | intentional attack |                 1 |                  nan |      30.0325 |            -0.1 |          291955 |              nan |
+|   2010 |      10 | MRO           | East North Central | cold               | severe weather     |              3000 |                70000 |      28.0977 |            -1.5 |          267895 |              nan |
+|   2012 |       6 | MRO           | East North Central | normal             | severe weather     |              2550 |                68200 |      31.9941 |            -0.1 |          277627 |              nan |
+|   2015 |       7 | MRO           | East North Central | warm               | severe weather     |              1740 |               250000 |      33.9826 |             1.2 |          292023 |              250 |
 
 ### Univariate Analyses
 When performing univariate analyses, we observe for the distribution of single variables.
