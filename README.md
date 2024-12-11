@@ -166,7 +166,7 @@ We will access whether the missingness is dependent on `CLIMATE.CATEGORY` and `C
   frameborder="0"
 ></iframe>
 
-The observed TVD is 321.5, resulting in the p-value of 0.753, which is greater than our significance level of 0.05. We fail to reject the null hypothesis and conclude that the missingness of `CUSTOMERS.AFFECTED` is not dependent on the column` CLIMATE.CATEGORY `and is independent from `CLIMATE.CATEGORY`. 
+The observed TVD is 321.5, resulting in the p-value of 0.759, which is greater than our significance level of 0.05. We fail to reject the null hypothesis and conclude that the missingness of `CUSTOMERS.AFFECTED` is not dependent on the column` CLIMATE.CATEGORY `and is independent from `CLIMATE.CATEGORY`. 
 
 #### Climate Region
 **Null Hypothesis:** The missingness of `CUSTOMERS.AFFECTED` is independent of the column `CLIMATE.REGION`. 
@@ -210,7 +210,7 @@ Test statistic: difference in mean, (mean number of customers affect in `South` 
 ></iframe>
 
 
-We performed 10,000 simulations to create our empirical distribution under the null hypothesis with our chosen test statistic. Our observed statistic of 61540 landed us at the p-value of 0.0204. With the significance level of 0.05, we reject the null hypothesis in favor for the alternative, indicating that the numbers of customers affected in `South` region is greater than the number of customers affected in the `Northeast` region. We conclude that outages in the `South` tend to be more severe. 
+We performed 10,000 simulations to create our empirical distribution under the null hypothesis with our chosen test statistic. Our observed statistic of 61540 landed us at the p-value of 0.0201. With the significance level of 0.05, we reject the null hypothesis in favor for the alternative, indicating that the numbers of customers affected in `South` region is greater than the number of customers affected in the `Northeast` region. We conclude that outages in the `South` tend to be more severe. 
 
 
 ## Framing a Prediction Problem
@@ -221,7 +221,7 @@ We use only features available at the time of prediction including `'CLIMATE.CAT
 ## Baseline Model
 Our model was built to predict the 'CLIMATE.REGION' (binary: Northeast or South) using the features of `'ANOMALY.LEVEL'` (quantitative), `'YEAR'` (ordinal), `'RES.PERCEN'` (quantitative), and `'CLIMATE.CATEGORY'` (nominal). The `'CLIMATE.CATEGORY'` feature was one-hot encoded, while quantitative features were passed directly into the model without scaling. We used `ANOMALY.LEVEL` and `CLIMATE.CATEGORY` to provide us with information of the climate in the different climate regions, `YEAR` to account for changes over time, and `RES.PERCEN` to offer economical statistics about the two regions.The target, `'CLIMATE.REGION'`, was binarized (0 for Northeast, 1 for South).
 
-The pipeline combined a ColumnTransformer for preprocessing and the Random Forest Classifier for predictions. Because of the amount of variation in the evaluation metrics, we ran the model 100 times with different splits training and testing sets and calculated the averages. Over the course of 100 simulations, the $R^2$ is 0.802, while the F-1 Score is 0.744. 
+The pipeline combined a ColumnTransformer for preprocessing and the Random Forest Classifier for predictions. Because of the amount of variation in the evaluation metrics, we ran the model 100 times with different splits training and testing sets and calculated the averages. Over the course of 100 simulations, the $R^2$ is 0.792, while the F-1 Score is 0.731. 
 
 Overall, the model performed well as a baseline, with strong metrics and effective handling of both categorical and numerical features. While missing values in `'RES.PERCEN'` could be addressed to enhance performance, the current implementation provides a solid foundation for predicting climate regions.
 
@@ -237,7 +237,7 @@ To find the optimal hyperparameters for our RandomTreeClassifier, we used GridSe
 - max_depth = 12
 - n_estimators = 40
 
-Overall, we noticed an improvement in our final model with an average $R^2$ across 100 simulations (similar to before) of 0.952 and an F-1 Score of 0.939. 
+Overall, we noticed an improvement in our final model with an average $R^2$ across 100 simulations (similar to before) of 0.952 and an F-1 Score of 0.940. 
 
 
 ## Fairness Analysis
@@ -253,4 +253,4 @@ Alternate Hypothesis: There is a differences between the distribution of the f1_
   frameborder="0"
 ></iframe>
 
-We utilized permutation test to test 'differences in f1_score distribution' between the 'is_winter' data and not 'not_winter' data. We got a p_value of: 0.13, which is greater than the observed statistic of 0.05, so we reject our null hypothesis and conclude that there is a differences between the distribution of the f1_scores of 'is_winter' and 'not_winter'.
+We utilized permutation test to test ‘differences in f1_score distribution’ between the ‘is_winter’ data and not ‘not_winter’ data. We got a p_value of: 0.04, which is less than the observed statistic of 0.05, so we reject our null hypothesis and conclude that there is a differences between the distribution of the f1_scores of ‘is_winter’ and ‘not_winter’.
