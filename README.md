@@ -253,4 +253,4 @@ Alternate Hypothesis: There is a differences between the distribution of the f1_
   frameborder="0"
 ></iframe>
 
-We utilized permutation test to test ‘differences in f1_score distribution’ between the ‘is_winter’ data and not ‘not_winter’ data. We got a p_value of: 0.04, which is less than the significance level of 0.05, so we reject our null hypothesis and conclude that there is a differences between the distribution of the f1_scores of ‘is_winter’ and ‘not_winter’.
+We utilized permutation test to test ‘differences in f1_score distribution’ between the ‘is_winter’ data and not ‘not_winter’ data. We got a p_value of: 0.04, which is less than the significance level of 0.05, so we reject our null hypothesis and conclude that there is a differences between the distribution of the f1_scores of ‘is_winter’ and ‘not_winter’ and thus our model is not fair.
