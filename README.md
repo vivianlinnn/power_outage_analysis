@@ -48,12 +48,23 @@ Although we did not initially make any new columns in this step, we made copies 
 When performing univariate analyses, we observe for the distribution of single variables.
 
 #### Distribution of Outages in Different Climate Regions
-<img width="1079" alt="image" src="https://cdn.plot.ly/plotly-2.35.2.min.js">
+<iframe
+  src="assets/climate_region_outage.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 As observed, the greatest number of outages reported in the years 2000 to 2016 are the Northeast and South regions.
 
 
 #### Distribution of Outages Across Different Months of the Year
-<img width="1079" alt="image" src="month_counts.jpg">
+<iframe
+  src="assets/month_outage.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 As observed, outages are reported in the largest numbers in the months of June, July, and August. These months are in the season of summer, therefore according to the graph, outages are more likely to happen in the summer.
 
 
@@ -63,12 +74,22 @@ When performing bivariate analyses, we observe for the relationship of two varia
 #### Climate Region vs. Outage Duration
 
 To achieve this plot, we calculated the grouped z-score by `CLIMATE.REGION` of all `OUTAGE.DURATION` and made the z-score threshold to be within approximately -0.5 to 0.5 to remove any significant outliers to give us a better representation to give us a more general comparison between all regions. 
-<img width="1079" alt="image" src="climate_region_OD.jpg">
+<iframe
+  src="assets/climate_region_duration.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 In this plot, we observe the relationship between the different climate regions and different quartile measurements (1st quartile, Median, 3rd Quartile) of the outage durations of each regions. The East North Central Region have the highest Q1, median, and Q3 outage duration. 
 
 #### Cause Category vs. Customers Affected
-<img width="1079" alt="image" src="cause_category_CA.jpg">
+<iframe
+  src="assets/cause_category_CA.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 In this plot, we observe the relationship between the `CAUSE.CATEGORY` and `CUSTOMERS.AFFECTED`. The two major causes for more severe outages, meaning that on average, customers affected was the greatest because of these two causes are severe weather and system operation disruptions.
 
@@ -124,7 +145,13 @@ We will access whether the missingness is dependent on `CLIMATE.CATEGORY` and `C
 
 <img width="1079" alt="image" src="missing_CC.png">
 
-<img width="1079" alt="image" src="https://github.com/user-attachments/assets/d5ac2a86-0bed-4a4b-a338-9fd82d142f70">
+<iframe
+  src="assets/missing_climate_category.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 The observed TVD is 321.5, resulting in the p-value of 0.753, which is greater than our significance level of 0.05. We fail to reject the null hypothesis and conclude that the missingness of `CUSTOMERS.AFFECTED` is not dependent on the column` CLIMATE.CATEGORY `and is independent from `CLIMATE.CATEGORY`. 
 
 #### Climate Region
@@ -136,7 +163,13 @@ The observed TVD is 321.5, resulting in the p-value of 0.753, which is greater t
 
 <img width="1079" alt="image" src="missing_CR.png">
 
-<img width="1079" alt="image" src="climate_region_customers_affected.jpg">
+<iframe
+  src="assets/missing_climate_region.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 The observed TVD is 334.0, resulting in the p-value of 0.0, which is less than our significance level of 0.05. We reject the null hypothesis and conclude that the missingness of `CUSTOMERS.AFFECTED` is dependent on the column `CLIMATE.CATEGORY` 
 
 
@@ -150,7 +183,12 @@ We will be performing a permutation test to determine if the number of customers
 
 Test statistic: difference in mean, (mean number of customers affect in `South` region) - (mean number of customers afected in `Northeast` region)
 
-<img width="1079" alt="image" src="south_northeast.jpg">
+<iframe
+  src="assets/permuation_test.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
 
 
 We performed 10,000 simulations to create our empirical distribution under the null hypothesis with our chosen test statistic. Our observed statistic of 61540 landed us at the p-value of 0.0204. With the significance level of 0.05, we reject the null hypothesis in favor for the alternative, indicating that the numbers of customers affected in `South` region is greater than the number of customers affected in the `Northeast` region. We conclude that outages in the `South` tend to be more severe. 
@@ -189,5 +227,11 @@ For the Fairness Analysis Model, we computed the difference in the distribution 
 Null Hypothesis: There are no differences between the distribution of the f1_scores of 'is_winter' and not 'is_winter'.
 Alternate Hypothesis: There is a differences between the distribution of the f1_scores of 'is_winter' and not 'is_winter'.
 
-<img width="1054" alt="image" src="https://github.com/user-attachments/assets/6b5d5b19-05d0-4d4a-99df-b3703f05d91b">
+<iframe
+  src="assets/analysis.html"
+  width="800"
+  height="600"
+  frameborder="0"
+></iframe>
+
 We utilized permutation test to test 'differences in f1_score distribution' between the 'is_winter' data and not 'not_winter' data. We got a p_value of: 0.13, which is greater than the observed statistic of 0.05, so we reject our null hypothesis and conclude that there is a differences between the distribution of the f1_scores of 'is_winter' and 'not_winter'.
